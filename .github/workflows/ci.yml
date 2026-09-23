@@ -1,8 +1,33 @@
-name: ci
+name: CI
 
 on:
   push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "examples/**"
+      - "config/**"
+      - "scripts/**"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "Dockerfile"
+      - ".github/workflows/**"
   pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "examples/**"
+      - "config/**"
+      - "scripts/**"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "Dockerfile"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   test:
@@ -15,5 +40,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: pip install -e .[dev]
+      - run: pip install -e ".[dev]"
       - run: pytest -q
