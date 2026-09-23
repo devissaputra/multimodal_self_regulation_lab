@@ -1,5 +1,7 @@
 # Multimodal Self-Regulation Lab
 
+[![CI](https://github.com/devissaputra/multimodal_self_regulation_lab/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/multimodal_self_regulation_lab/actions/workflows/ci.yml)
+
 **A multimodal feature-fusion sandbox for studying self-regulated learning without hiding modality reliability.**
 
 > Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, or institutions.
