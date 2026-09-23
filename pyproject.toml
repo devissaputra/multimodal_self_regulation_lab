@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multimodal-self-regulation-lab"
+version = "0.1.0"
+description = "A multimodal feature-fusion sandbox for studying self-regulated learning without hiding modality reliability."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Devis W. Saputra"}]
+dependencies = ["numpy>=1.26","pandas>=2.0","scikit-learn>=1.4","matplotlib>=3.8","PyYAML>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0","ruff>=0.6"]
+
+[project.scripts]
+multimodal-self-regulation-lab = "multimodal_self_regulation_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

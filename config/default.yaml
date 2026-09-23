@@ -1,0 +1,5 @@
+seed: 42
+demo_data: synthetic
+responsible_use:
+  high_stakes_decisions: false
+  human_oversight_required: true
