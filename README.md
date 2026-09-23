@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/devissaputra/multimodal_self_regulation_lab/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/multimodal_self_regulation_lab/actions/workflows/ci.yml)
 
+
+**Category:** AI in Education
 **A multimodal feature-fusion sandbox for studying self-regulated learning without hiding modality reliability.**
 
 > Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, or institutions.
@@ -12,7 +14,7 @@
 
 Multimodal learning analytics often jumps straight from sensor streams to a model score. This repo makes the fusion logic explicit. It simulates interaction, gaze-like attention, and self-report features, tracks missing modalities, and compares early fusion with reliability-weighted fusion.
 
-The engineering goal is simple: make the research logic inspectable. Every metric in the demo can be traced back to a small function, the demo data can be regenerated from a fixed seed, and the limitations are stated next to the claims rather than buried at the end.
+The implementation keeps each modality separate through preprocessing and reliability estimation before fusion. That design makes ablation results easier to interpret because researchers can see when a signal helps, hurts, or disappears.
 
 ## Research questions
 
@@ -32,7 +34,7 @@ The reference pipeline follows five stages:
 4. **Fusion**
 5. **Ablation evaluation**
 
-The current implementation is deliberately compact enough to audit. It is a foundation for a real study, not a theatrical “AI demo.”
+The baseline is intentionally simple enough to inspect before introducing real sensor streams, temporal models, or participant data.
 
 ## Core outputs
 
