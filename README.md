@@ -43,7 +43,6 @@ The baseline is intentionally simple enough to inspect before introducing real s
 - `self_report_auc`
 - `early_fusion_auc`
 - `reliability_fusion_auc`
-- `missing_modality_delta`
 
 ![Synthetic demo dashboard](docs/images/demo_dashboard.png)
 
