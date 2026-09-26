@@ -1,0 +1,49 @@
+{
+  "question": "Does combining modalities improve synthetic prediction?",
+  "data": "Simulated interaction, attention-like and self-report features with missingness and reliability values.",
+  "method": "Shared 70/30 stratified holdout; train-only imputation/scaling; modality ablations and a test-batch rank-fusion comparator.",
+  "formula": "Fusion = (interaction_rank + reliabilityA×attention_rank + reliabilityR×report_rank)/(1+reliabilityA+reliabilityR).",
+  "interpretation": "The classifier AUC is now held out. Rank fusion uses the unlabeled test batch and is therefore a transductive descriptive comparator, not an independently deployed predictor. Synthetic attention is not a measurement of real mental state.",
+  "status": "SYNTHETIC / RULE-BASED PROTOTYPE | no educational validity claim",
+  "source": "results/demo_metrics.json",
+  "rows": [
+    {
+      "label": "interaction_auc",
+      "path": [
+        "interaction_auc"
+      ],
+      "unit": "unitless"
+    },
+    {
+      "label": "attention_auc",
+      "path": [
+        "attention_auc"
+      ],
+      "unit": "unitless"
+    },
+    {
+      "label": "self_report_auc",
+      "path": [
+        "self_report_auc"
+      ],
+      "unit": "unitless"
+    },
+    {
+      "label": "early_fusion_auc",
+      "path": [
+        "early_fusion_auc"
+      ],
+      "unit": "unitless"
+    },
+    {
+      "label": "reliability_fusion_auc",
+      "path": [
+        "reliability_fusion_auc"
+      ],
+      "unit": "unitless"
+    }
+  ],
+  "table_title": "Selected recorded values (units and context shown)",
+  "evidence_note": "See CALCULATIONS.md for data status, execution scope and interpretation.",
+  "finding": "This synthetic experiment compares interaction, attention-like, and self-report signals using one shared held-out partition. The revised classifier pipeline fits imputation and scaling only on training rows, correcting the earlier in-sample evaluation. A separately labeled rank-fusion comparator explores reliability weighting; neither the simulated features nor the scores validate self-regulation or attention measurement in real learners."
+}

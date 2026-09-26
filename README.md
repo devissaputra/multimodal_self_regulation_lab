@@ -1,5 +1,21 @@
 # Multimodal Self-Regulation Lab
 
+This synthetic experiment compares interaction, attention-like, and self-report signals using one shared held-out partition. The revised classifier pipeline fits imputation and scaling only on training rows, correcting the earlier in-sample evaluation. A separately labeled rank-fusion comparator explores reliability weighting; neither the simulated features nor the scores validate self-regulation or attention measurement in real learners.
+
+## Start here
+
+- [Calculations, evidence and verification scope](CALCULATIONS.md)
+- [Figure sources and exact numerical paths](docs/figure_spec.json)
+- [Data status](data/README.md)
+
+![Study question, data, design and interpretation](assets/review_overview.svg)
+
+![Defined calculation and source-linked evidence](assets/review_calculations.svg)
+
+**Review scope:** The existing suite requires unavailable dependencies; no full-suite pass is claimed. The bundled demonstration executed successfully in this review.
+
+## Detailed project documentation
+
 [![CI](https://github.com/devissaputra/multimodal_self_regulation_lab/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/multimodal_self_regulation_lab/actions/workflows/ci.yml)
 
 
@@ -8,7 +24,6 @@
 
 > Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, or institutions.
 
-![Architecture](docs/images/architecture.png)
 
 ## Why this project exists
 
@@ -24,7 +39,6 @@ The implementation keeps each modality separate through preprocessing and reliab
 
 ## What the repository does
 
-![Pipeline](docs/images/pipeline.png)
 
 The reference pipeline follows five stages:
 
@@ -44,7 +58,6 @@ The baseline is intentionally simple enough to inspect before introducing real s
 - `early_fusion_auc`
 - `reliability_fusion_auc`
 
-![Synthetic demo dashboard](docs/images/demo_dashboard.png)
 
 The dashboard above is generated from **synthetic data** and is included only to show what the analysis surface looks like. It is not a reported empirical result.
 
@@ -83,7 +96,6 @@ multimodal_self_regulation_lab/
 
 ## Research design in one picture
 
-![Research map](docs/images/research_map.png)
 
 The fuller design rationale is in [`docs/research_design.md`](docs/research_design.md), including constructs, assumptions, validation steps, and a proposed empirical extension.
 
@@ -98,7 +110,7 @@ The fuller design rationale is in [`docs/research_design.md`](docs/research_desi
 ## Responsible-use boundaries
 
 - Synthetic “attention” variables are not eye-tracking measures and should not be interpreted as such.
-- In-sample AUC is used only for a compact demo; real studies require held-out evaluation.
+- Classifier AUC uses one shared stratified 70/30 holdout with train-only imputation and scaling. Reliability fusion ranks the unlabeled held-out batch; it is a transductive comparator.
 - Multimodal data raise privacy and consent issues that must be addressed before collection.
 
 ## Strong next experiments

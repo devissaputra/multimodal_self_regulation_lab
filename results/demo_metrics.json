@@ -1,7 +1,7 @@
 {
-  "interaction_auc": 0.751,
-  "attention_auc": 0.747,
-  "self_report_auc": 0.721,
-  "early_fusion_auc": 0.806,
-  "reliability_fusion_auc": 0.807
+  "interaction_auc": 0.761,
+  "attention_auc": 0.734,
+  "self_report_auc": 0.743,
+  "early_fusion_auc": 0.802,
+  "reliability_fusion_auc": 0.811
 }

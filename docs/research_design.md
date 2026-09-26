@@ -42,3 +42,8 @@ The repository intentionally distinguishes **constructs** from **proxies**. A be
 - Use nested cross-validation and subgroup robustness checks.
 - Add explicit sensor-quality models and late-fusion baselines.
 - Test whether multimodal feedback is understandable and actionable for learners and educators.
+
+
+## Evaluation correction
+
+Classifier AUC now uses a shared seed-42 stratified 70/30 holdout. Median imputation and standardization are fitted only on training rows. The rank-fusion comparator uses ranks within the unlabeled held-out batch and is explicitly transductive. It does not fit the target labels, but should not be interpreted as a deployable independently normalized predictor.
